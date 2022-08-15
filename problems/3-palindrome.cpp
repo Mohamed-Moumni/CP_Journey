@@ -36,20 +36,24 @@ typedef pair<ll,ll> pll;
 #define L length()
 const int mod = (int)1e9 + 7;
 
-void solve()
-{
-    ll n;
+// void solve(ll t)
+// {
+    
+// }
 
-    cin >> n;
-    while ()
-}
-
+// signed main(void)
+// {
+//     ll t;
+//     cin >> t;
+//     while (t--)
+//     {
+//         solve(t);
+//     }
+// }
 signed main(void)
 {
-    ll t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+    ll  n;
+
+    cin >> n;
+    
 }

@@ -36,9 +36,38 @@ typedef pair<ll,ll> pll;
 #define L length()
 const int mod = (int)1e9 + 7;
 
-void solve(void)
+void solve()
 {
-    
+    ll n;
+
+    cin >> n;
+    vector<ll> tab(n);
+    ll i = 0;
+    ll swap;
+    while (i < n)
+    {
+        tab[i] = i + 1;
+        i++;
+    }
+    i = 0;
+    ll k;
+    while (i < n)
+    {
+        k = 0;
+        while (k < n)
+        {
+            cout << tab[k] << " ";
+            k++;
+        }
+        cout << "\n";
+        if (i < n - 1)
+        {
+            swap = tab[i];
+            tab[i] = tab[n-1];
+            tab[n-1] = swap;
+        }
+        i++; 
+    }
 }
 
 signed main(void)

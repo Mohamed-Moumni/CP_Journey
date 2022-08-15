@@ -3,27 +3,39 @@
 
 using namespace std;
 
-int fibonnacci(int n)
+#define MAXN 4000000
+#define UNKNOWN -1
+
+long f[MAXN+1];
+
+long fib_c(int n)
 {
-    if (n == 0 || n == 1)
+    if (f[n] == UNKNOWN)
     {
-        return (1);
+        f[n] = fib_c(n - 1) + fib_c(n - 2);
     }
-    else
-    {
-        return (fibonnacci(n - 1) + fibonnacci(n - 2));
-    }
+    return (f[n]);
 }
+
+long    fib_c_driver(int n)
+{
+    int i;
+
+    f[0] = 0;
+    f[1] = 1;
+    for (i = 2; i <= n; i++)
+    {
+        f[i] = UNKNOWN;
+    }
+    return (fib_c(n));
+}
+
 int main(void)
 {
     int sum = 0;
-    int fibo = fibonnacci(0);
-    for (int i = 0; i < 4000000; i++)
+    for (int i = 2; i < MAXN; i++)
     {
-        if (fibo % 2 == 0)
-            sum += fibo;
-        i++;
-        fibo = fibonnacci(i);
+        if (fib_c_driver(i) %
     }
     cout << sum << "\n";
 }

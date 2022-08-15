@@ -38,6 +38,10 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
+    ll  n;
+    vector<char > A, B;
+
+    cin >> n >> A >> B:
     
 }
 

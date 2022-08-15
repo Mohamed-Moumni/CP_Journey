@@ -35,7 +35,7 @@ char *conv_int_to_char(int n)
     tab = (char *)malloc(sizeof(char) * (how_many_digit(n) + 1));
     shifted = n;
     int i = 0;
-    while (i < how_many_digit(n) && shifted > 0)
+    while (shifted > 0)
     {
         tab[i] = (shifted & 0b10000000) + '0';
         shifted = shifted<<1;
