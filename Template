@@ -34,6 +34,9 @@ typedef pair<ll,ll> pll;
 #define Z size()
 #define REP(i,a,b) for (int i = a; i < b; i++)
 #define L length()
+#define valid(a,b,c) (a >= b && a < c ? 1 : 0)
+int dx[4] = {0,0,1,-1};
+int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
 void solve(void)
