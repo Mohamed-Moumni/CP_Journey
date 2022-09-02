@@ -39,24 +39,33 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+#define str "qwertyuiopasdfghjkl;zxcvbnm,./"
+
+int func(char c)
+{
+    for (int i = 0; i < 31 ; i++)
+    {
+        if (c == str[i])
+            return (i);
+    }
+    return (-1);
+}
 signed main(void)
 {
+    string lr;
 
-    int n, up, down;
+    cin >> lr;
+    string input;
+    cin >> input;
+    int mv;
 
-    cin >> n;
-    up = 0, down = 0;
-    for (int i = 0; i < n; i++)
-    {
-        int a,b;
-        cin >> a >> b;
-        if (a >= 0)
-            up++;
-        else
-            down++;
-    }
-    if (up > 1 && down > 1)
-        cout << "NO" << endl;
+    if (lr[0] == 'R')
+        mv = -1;
     else
-        cout << "YES" << endl;
+        mv = 1;
+    for (int i = 0; i < input.size() ; i++)
+    {
+        cout << str[func(input[i]) + mv];
+    }
+    cout << endl;
 }

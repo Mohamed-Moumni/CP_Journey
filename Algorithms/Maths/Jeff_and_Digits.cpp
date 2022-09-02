@@ -41,22 +41,5 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
-
-    int n, up, down;
-
-    cin >> n;
-    up = 0, down = 0;
-    for (int i = 0; i < n; i++)
-    {
-        int a,b;
-        cin >> a >> b;
-        if (a >= 0)
-            up++;
-        else
-            down++;
-    }
-    if (up > 1 && down > 1)
-        cout << "NO" << endl;
-    else
-        cout << "YES" << endl;
+       
 }

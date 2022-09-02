@@ -39,24 +39,30 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+
 signed main(void)
 {
+    int n,m,k;
 
-    int n, up, down;
-
-    cin >> n;
-    up = 0, down = 0;
-    for (int i = 0; i < n; i++)
+    cin >> n >> m >> k;
+    int a;
+    for (int i = 0; i < n ; i++)
     {
-        int a,b;
-        cin >> a >> b;
-        if (a >= 0)
-            up++;
+        cin >> a;
+        if (a == 1)
+            m--;
         else
-            down++;
+        {
+            if(m > 0)
+                m--;
+            else
+                k--;
+        }
     }
-    if (up > 1 && down > 1)
-        cout << "NO" << endl;
-    else
-        cout << "YES" << endl;
+    int res = 0;
+    if (m < 0)
+        res += abs(m);
+    if (k < 0)
+        res += abs(k);
+    cout << res << endl; 
 }

@@ -41,22 +41,28 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
+    int n,t;
 
-    int n, up, down;
-
-    cin >> n;
-    up = 0, down = 0;
-    for (int i = 0; i < n; i++)
+    cin >> n >> t;
+    vector<int> tab(n-1);
+    for (int i = 0; i < n - 1; i++)
     {
-        int a,b;
-        cin >> a >> b;
-        if (a >= 0)
-            up++;
-        else
-            down++;
+        cin >> tab[i];
     }
-    if (up > 1 && down > 1)
-        cout << "NO" << endl;
-    else
-        cout << "YES" << endl;
+    int i = 0;
+    do
+    {
+        if ((i + 1) + tab[i] == t)
+        {
+            cout << "YES" << endl;
+            return (0);
+        }
+        if ((i + 1) + tab[i] > n)
+        {
+            cout << "NO" << endl;
+            return 0;
+        }
+        i++;
+    }while(i < n - 1);
+    cout << "NO" << endl;
 }

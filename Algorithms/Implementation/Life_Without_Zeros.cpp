@@ -39,24 +39,44 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-signed main(void)
+int without_zero(int a)
 {
-
-    int n, up, down;
-
-    cin >> n;
-    up = 0, down = 0;
-    for (int i = 0; i < n; i++)
+    int res = 0;
+    while (a > 0)
     {
-        int a,b;
-        cin >> a >> b;
-        if (a >= 0)
-            up++;
-        else
-            down++;
+        if (a%10)
+        {
+            res *= 10;
+            res += a%10;
+        }
+        a = a / 10;
     }
-    if (up > 1 && down > 1)
-        cout << "NO" << endl;
-    else
+    return res;
+}
+int revers(int a)
+{
+    int res = 0;
+    while (a > 0)
+    {
+        res += a % 10;
+        res *= 10;
+        a = a / 10;
+    }
+    return (res);
+}
+
+signed  main(void)
+{
+    int a,b;
+
+    cin >> a >> b;
+    int t,y,r;
+
+    t = without_zero(a);
+    y = without_zero(b);
+    r =  without_zero(a + b);
+    if ((revers(t) + revers(y) == revers(r)))
         cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
 }

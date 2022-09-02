@@ -41,22 +41,39 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
+    string ter;
+    string res = "";
 
-    int n, up, down;
-
-    cin >> n;
-    up = 0, down = 0;
-    for (int i = 0; i < n; i++)
+    cin >> ter;
+    int check = 0;
+    int i = 0;
+    for (; ter[i] == '.'; i++)
+        check++;
+    for (; i < ter.size() ; i++)
     {
-        int a,b;
-        cin >> a >> b;
-        if (a >= 0)
-            up++;
-        else
-            down++;
+        if (ter[i] == '.')
+        {
+            res += "0";
+        }
+        if (ter[i] == '-')
+        {
+            if (i + 1 < ter.size() && ter[i + 1] == '-')
+            {
+                res += "2";
+                i++;
+            }
+            else if (i + 1 < ter.size() && ter[i + 1] == '.')
+            {
+                res += "1";
+                i++;
+            }
+        }
     }
-    if (up > 1 && down > 1)
-        cout << "NO" << endl;
-    else
-        cout << "YES" << endl;
+    while (check > 0)
+    {
+        cout << "0";
+        check--;
+    }
+    if (res[0] != '0')
+        cout << res << endl;
 }

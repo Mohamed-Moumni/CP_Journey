@@ -41,22 +41,25 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
+    string input;
 
-    int n, up, down;
-
-    cin >> n;
-    up = 0, down = 0;
-    for (int i = 0; i < n; i++)
+    cin >> input;
+    string res = "";
+    for (int i = 0; i < input.size(); i++)
     {
-        int a,b;
-        cin >> a >> b;
-        if (a >= 0)
-            up++;
+        if (input[i] != 'A' &&input[i] != 'a' &&input[i] != 'O' &&input[i] != 'o' &&
+        input[i] != 'Y' &&input[i] != 'y' &&input[i] != 'E' &&input[i] != 'e' &&input[i] != 'U' &&input[i] != 'u'
+    &&input[i] != 'I' &&input[i] != 'i')
+    {
+        res += '.';
+        if (input[i] < 97)
+        {
+            res +=  (input[i] + 32);
+            // cout << (input[i] + 32) << endl;
+        }
         else
-            down++;
+            res += (input[i]);
     }
-    if (up > 1 && down > 1)
-        cout << "NO" << endl;
-    else
-        cout << "YES" << endl;
+    }
+    cout << res << endl;
 }
