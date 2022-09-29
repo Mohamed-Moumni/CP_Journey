@@ -44,11 +44,16 @@ signed main(void)
     int n;
 
     cin >> n;
+    vector<int> tab(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> tab[i];
+    }
+    sort(tab.begin(), tab.end());
     int res = 0;
     for (int i = 1; i <= n; i++)
     {
-        res += (n - i) * i;
+        res += abs(tab[i - 1] - i);
     }
-    res  += n;
     cout << res << endl;
 }

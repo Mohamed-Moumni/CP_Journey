@@ -39,16 +39,27 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    int n,m;cin>>n;
+    vi a(n);
+    for (int i=0;i<n;i++)
+        cin >> a[i];
+    cin>>m;
+    vi b(m);
+    for (int i=0;i<m;i++)
+        cin>>b[i];
+    sort(a.B, a.E);
+    sort(b.B,b.E);
+    cout << a[n-1] << " " << b[m - 1] << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t=1;
+    // cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

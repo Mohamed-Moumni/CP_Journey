@@ -44,11 +44,9 @@ signed main(void)
     int n;
 
     cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    vector<int> tab(n);
+    for (int i =0 ; i < n; i++)
     {
-        res += (n - i) * i;
+        cin >> tab[i];
     }
-    res  += n;
-    cout << res << endl;
 }

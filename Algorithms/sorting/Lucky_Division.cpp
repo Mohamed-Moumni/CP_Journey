@@ -44,11 +44,24 @@ signed main(void)
     int n;
 
     cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    if (n % 4 == 0)
+        cout << "YES" << endl;
+    else if (n % 7 == 0)
+        cout << "YES" << endl;
+    else if(n % 47 == 0)
+        cout << "YES" << endl;
+    else
     {
-        res += (n - i) * i;
-    }
-    res  += n;
-    cout << res << endl;
+        while(n > 0)
+        {
+        // cout << "Here" << endl;
+            if (n % 10 != 7 && n % 10 != 4)
+            {
+                cout << "NO" << endl;
+                return (0);
+            }
+            n = n / 10;
+        }
+        cout << "YES" << endl;
+    }   
 }

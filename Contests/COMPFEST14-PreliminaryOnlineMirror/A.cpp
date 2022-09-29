@@ -39,16 +39,25 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-signed main(void)
+signed  main(void)
 {
-    int n;
+    ll n, d;
 
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    cin >> n >> d;
+    vector<ll> tab;
+    ll a;
+    for (ll i = 0; i < n; i++)
     {
-        res += (n - i) * i;
+        cin >> a;
+        tab.push_back(a);
     }
-    res  += n;
-    cout << res << endl;
+    sort(tab.begin(), tab.end());
+    ll res = 0;
+    ll sum = n;
+    if (n * tab[n - 1] < d)
+        cout << "0" << endl;
+    else
+    {
+        for (int i = 0;)
+    }
 }

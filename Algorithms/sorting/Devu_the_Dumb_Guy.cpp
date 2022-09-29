@@ -41,14 +41,25 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
-    int n;
+    int n,x;
 
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    cin >> n >> x;
+    vector<int > tab(n);
+    for (int i = 0; i < n; i++)
     {
-        res += (n - i) * i;
+        cin >> tab[i];
     }
-    res  += n;
+    sort(tab.begin(), tab.end());
+    int res = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (x > 0)
+        {
+            res += x * tab[i];
+        }
+        else
+            res += tab[i];
+        x--;
+    }
     cout << res << endl;
 }

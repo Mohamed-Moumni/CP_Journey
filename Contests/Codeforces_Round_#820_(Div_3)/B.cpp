@@ -39,16 +39,40 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    int n;cin>>n;
+    string input;cin>>input;
+    string ans = "";
+    int c = 0;
+    int i = n - 1;
+    while (i >= 0)
+    {
+        c = 0;
+        if (input[i] == '0')
+        {
+            c += input[i - 2] - '0';
+            c = c * 10;
+            c += input[i -1] - '0';
+            i-=3;
+        }
+        else
+        {
+            c = input[i] - '0';
+            i--;
+        }
+        ans += string(1, 97 + (c) - 1);
+    }
+    reverse(ans.begin(), ans.end());
+    cout << ans << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

@@ -41,14 +41,5 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        res += (n - i) * i;
-    }
-    res  += n;
-    cout << res << endl;
+    
 }

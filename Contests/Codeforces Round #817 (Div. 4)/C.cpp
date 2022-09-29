@@ -39,16 +39,34 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-signed main(void)
+void solve(void)
 {
     int n;
+    string str;
 
     cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    vector<string> tab(n);
+    for (int i = 0; i < n; i++)
     {
-        res += (n - i) * i;
+        for (int i = 0 ; i < 3; i++)
+        {
+            cin >> str;
+            tab.push_back(str);
+        }
     }
-    res  += n;
-    cout << res << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        cout << tab[i] << endl;
+    }
+}
+
+signed main(void)
+{
+    int t;
+
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
 }

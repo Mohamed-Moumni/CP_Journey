@@ -39,16 +39,37 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    string s1;cin>>s1;
+    int size = s1.size();
+    int sz;
+    int minimum;
+    if (s1.size() >= 3)
+    {
+        sz = s1.size() - 2;
+        if (s1[sz] > s1[sz+1])
+        {
+            s1[sz+1] = '0' + min((s1[sz+1] - '0') + 1, 9);
+        }
+    }
+    else
+    {
+        if (size == 2)
+        {
+            if (s1[0] > s1[1])
+                s1[1] = '0' + min((s1[0] - '0') + 1, 9);
+        }
+        cout << s1 << ln;
+    }
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

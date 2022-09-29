@@ -39,16 +39,38 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    string s,t;
+    cin>>s>>t;
+    int check = 0;
+    for (int i=0;i<t.Z;i++)
+    {
+        if (t[i] != 'a')
+            check = 1;
+    }
+    for (int i=0;i<t.Z;i++)
+    {
+        if (t[i] == 'a' && check == 1)
+        {
+            cout << "-1" << ln;
+            return ;
+        }
+    }
+    if (check == 0)
+    {
+        cout << "1" << ln;
+        return ;
+    }
+    cout << s.Z + 1 << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

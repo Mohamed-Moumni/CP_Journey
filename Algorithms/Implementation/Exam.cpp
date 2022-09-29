@@ -44,11 +44,18 @@ signed main(void)
     int n;
 
     cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    int c;
+    c = n / 2;
+    if (n %2)
+        c++;
+    int i = 1;
+    int j = n / 2 + 1;
+    while (i <= c)
     {
-        res += (n - i) * i;
+        cout << i << " ";
+        cout << j << " ";
+        i++;
+        j++;
     }
-    res  += n;
-    cout << res << endl;
+    cout << endl;
 }

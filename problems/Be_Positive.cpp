@@ -39,16 +39,35 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    int n;cin>>n;
+    int ans =0;
+    int neg = 0;
+    int npos = 0;
+    int a;
+    for(int i=0;i<n;i++)
+    {
+        cin >> a;
+        if (a < 0)
+            neg++;
+        if (a > 0)
+            npos++;
+    }
+    if ((neg >= (n % 2 ==0 ? n/2: n/2 + 1)))
+        cout << "-3" << ln;
+    else if ((npos >= (n%2 == 0 ? n/2:n/2+1)))
+        cout << "3" << ln;
+    else
+        cout << "0" << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t = 1;
+    // cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

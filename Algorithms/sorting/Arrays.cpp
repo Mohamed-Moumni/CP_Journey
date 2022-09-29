@@ -41,14 +41,38 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
-    int n;
+    int a,b;
+    int n,k;
 
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    cin >> a >> b;
+    cin >> k >> n;
+    vector<int> tab(a);
+    vector<int> tab2(b);
+    for (int i = 0; i < a; i++)
     {
-        res += (n - i) * i;
+        cin >> tab[i];
     }
-    res  += n;
-    cout << res << endl;
+    for (int i = 0; i < b; i++)
+    {
+        cin >> tab2[i];
+    }
+    sort(tab.begin(), tab.end());
+    sort(tab2.begin(), tab2.end());
+    if (tab[a - 1] <= tab2[0])
+    {
+        if (tab[a - 1] == tab2[0])
+        {
+            if (tab[a - 1])
+            if (n == a || k == b)
+                cout << "NO" << endl;
+            else
+                cout << "YES" << endl;
+        }
+        else
+            cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
 }

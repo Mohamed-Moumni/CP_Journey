@@ -39,16 +39,32 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void    dra_vert(void)
+{
+
+}
+
+void draw_horiz(void)
+{
+    
+}
+
+void solve(void)
+{
+    int n,k,r,c;
+
+    cin >> n >> k >> r >> c;
+    r--, c--;
+    for ()
+}
+
 signed main(void)
 {
-    int n;
+    int t;
 
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

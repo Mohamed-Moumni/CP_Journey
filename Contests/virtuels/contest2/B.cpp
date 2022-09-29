@@ -39,16 +39,44 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    int k,m,n;
+
+    cin >> k>>m>>n;
+    int sum=0;
+    vector<int> tab(n);
+    for (int i=0;i<n;i++)
+    {
+        cin >> tab[i];
+        sum += tab[i];
+    }
+    sort(tab.begin(), tab.end());
+    if (k - sum >= m)
+    {
+        cout << "0" << ln;
+    }
+    else
+    {
+        int i = tab.size() - 1;
+        int a = k - sum;
+        int ans = 0;
+        while (a < m)
+        {
+            a += tab[i];
+            i--;
+            ans++;
+        }
+        cout << ans << ln;
+    }
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

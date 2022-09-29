@@ -41,14 +41,14 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
-    int n;
+    string s1,s2,s3, res;
 
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        res += (n - i) * i;
-    }
-    res  += n;
-    cout << res << endl;
+    cin >> s1 >> s2 >> s3;
+    res = s1 + s2;
+    sort(res.begin(), res.end());
+    sort(s3.begin(), s3.end());
+    if (res.compare(s3))
+        cout << "NO" << endl;
+    else
+        cout << "YES" << endl;
 }

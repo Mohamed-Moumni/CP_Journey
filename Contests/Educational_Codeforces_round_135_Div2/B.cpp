@@ -38,17 +38,45 @@ typedef pair<ll,ll> pll;
 int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
+int hdigit(int a)
+{
+    int digit = 0;
+    while (a > 0)
+    {
+        digit++;
+        a = a / 10;
+    }
+    return (digit);
+}
+
+void solve(void)
+{
+    int n;
+    map<pair<int, int> , int >mp;
+    cin >> n;
+    int a;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a;
+        mp[make_pair(hdigit(a), 1)] = a;
+    }
+    for (int i = 0 ; i < n;i++)
+    {
+        cin >> a; 
+        mp[make_pair(hdigit(a), 2)] = a;
+    }
+    for (auto it = mp.begin(); it != mp.end() ;it++)
+    {
+        if ((*it))
+    }
+}
 
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

@@ -39,16 +39,35 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    int n;cin>>n;
+    vector<int> tab(n);
+    for (int i=0;i<n;i++)
+    {
+        cin >> tab[i];
+    }
+    sort(tab.begin(),tab.end());
+    int ans =0;
+    for (int i=tab.size() - 1;i >= 0;i--)
+    {
+        for (int j=i-1;j>=0;j--)
+        {
+            if (abs(tab[i] - tab[j]) >= 32)
+                break ;
+            else
+                ans++;
+        }
+    }
+    cout << ans << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

@@ -41,14 +41,13 @@ const int mod = (int)1e9 + 7;
 
 signed main(void)
 {
-    int n;
+    long long n,m,res;
 
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        res += (n - i) * i;
-    }
-    res  += n;
+    cin >> n >> m;
+    res = abs(n - m) / 2;
     cout << res << endl;
+    if (n > m)
+        cout << n - res << endl;
+    else
+        cout << m - res << endl;
 }

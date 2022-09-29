@@ -39,16 +39,30 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    int n,c;cin>>n>>c;
+    map<int , int >mp;
+    int a;
+    for (int i=0;i<n;i++)
+    {
+        cin>>a;
+        mp[a]++;
+    }
+    int ans=0;
+    for (auto u:mp)
+    {
+        ans += min(c, u.second);
+    }
+    cout << ans << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

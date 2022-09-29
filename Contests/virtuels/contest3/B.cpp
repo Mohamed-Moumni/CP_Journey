@@ -39,16 +39,28 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+void solve(void)
+{
+    string s1;cin>>s1;
+    int ans = 0;
+    int a,b;
+    a = s1[0] - 'a';
+    ans = 25 * a;
+    b = s1[1] - 'a';
+    if (a < b)
+        ans += b - 1;
+    else
+        ans += b;
+    ans++;
+    cout << ans << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
+        solve();
     }
-    res  += n;
-    cout << res << endl;
 }

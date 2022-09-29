@@ -39,16 +39,29 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-signed main(void)
+void solve(void)
 {
     int n;
 
     cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    vector<pair<int, int> > v(n);
+    int d;
+    for (int i = 0; i < n; i++)
     {
-        res += (n - i) * i;
+        cin >> d;
+        v[i].first = d;
+        v[i].second = i + 1; 
     }
-    res  += n;
-    cout << res << endl;
+    sort(v.begin(), v.end());
+    cout << v[n - 1].second << "\n";
+}
+
+signed main(void)
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
 }

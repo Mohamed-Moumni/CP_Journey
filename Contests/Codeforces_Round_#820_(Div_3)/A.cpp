@@ -39,16 +39,32 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+int min(int a, int b)
+{
+    if (a < b)
+        return a;
+    return b;
+}
+
+void solve(void)
+{
+    int a,b,c;cin >>a>>b>>c;
+    int t1 = abs(a-1);
+    int t2 = abs(b-c) + abs(c -1);
+    if (t1 < t2)
+        cout << "1" << ln;
+    else if (t1 > t2)
+        cout << "2" << ln;
+    else
+        cout << "3" << ln;
+}
+
 signed main(void)
 {
-    int n;
-
-    cin >> n;
-    int res = 0;
-    for (int i = 1; i <= n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        res += (n - i) * i;
-    }
-    res  += n;
-    cout << res << endl;
+        solve();
+} 
 }
