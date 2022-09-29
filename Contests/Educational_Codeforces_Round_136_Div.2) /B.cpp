@@ -41,28 +41,57 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int n,m;cin>>n>>m;
-
-    if ((n >= 2 || n >= 3) && (m >= 2 || m >= 3))
+    int n;cin >> n;
+    vi d(n);
+    int count =0;
+    for (int i=0;i<n;i++)
     {
-        if (n >= 2)
+        cin >> d[i];
+        if (d[i] == 0)
+            count++;
+    }
+    if (count == n)
+    {
+        for (int i=0;i<n;i++)
         {
-            cout << 2 << " ";
+            cout << "0";
+            if (i < n-1)
+                cout << " ";
+        }
+        cout << ln;
+        return ;
+    }
+    vi a(n);
+    a[0] = d[0];
+    int c,b;
+    int check = 0;
+    for (int i=1;i<n;i++)
+    {
+        c = a[i-1] - d[i];
+        b = d[i] + a[i - 1];
+        if (c >= 0 && b >= 0 && b != c)
+        {
+            check = 2;
+            a[i] = min(b,c);
         }
         else
         {
-            cout << 3 << " ";
+            a[i] = b;
         }
-        if (m >= 2)
-        {
-            cout << 2 << ln;
-        }
-        else
-            cout << 3 << ln;
+    }
+    if (check == 2)
+    {
+        cout << "-1" << ln;
     }
     else
     {
-        cout << n << " " << m << ln;
+        for (int i=0;i<a.Z;i++)
+        {
+            cout << a[i];
+            if (i < a.Z - 1)
+                cout << " ";
+        }
+        cout << ln;
     }
 }
 
