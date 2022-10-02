@@ -39,23 +39,37 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-
-ll powe(ll a, ll b)
+int is_prime(int a)
 {
-    int res;
-    if (b == 0)
-        return (1);
-    if (b == 1)
-        return (a);
-    res = power(a,b/2);
-    if (b%2 == 0)
-        return (res * res);
-    return (res *res * a);
+    int sq = (int)sqrt(a);
+    for (int i=2;i<=sq;i++)
+    {
+        if (a % i == 0)
+            return (0);
+    }
+    return (1);
 }
+
 void solve(void)
 {
-    ll n,m;cin>>n>>m;
-    cout << powe(10,10e9) << ln;
+    int n,m;cin>>n>>m;
+    int count =0;
+    if (is_prime(m) == 0)
+    {
+        cout << "NO" << ln;
+        return ;
+    }
+    else
+        count++;
+    for (int i=m-1;i > n;i--)
+    {
+        if (is_prime(i))
+            count++;
+    }
+    if (count == 1)
+        cout << "YES" << ln;
+    else
+        cout << "NO" << ln;
 }
 
 signed main(void)

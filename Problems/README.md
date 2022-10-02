@@ -2,3 +2,8 @@
 
 * [756B](https://codeforces.com/problemset/problem/746/B)
 * [867A](https://codeforces.com/problemset/problem/867/A)
+* [80A](https://codeforces.com/problemset/problem/80/A)
+* [61A](https://codeforces.com/problemset/problem/61/A)
+* [233A](https://codeforces.com/problemset/problem/233/A)
+* [144A](https://codeforces.com/problemset/problem/144/A)
+* [200B](https://codeforces.com/problemset/problem/200/B)

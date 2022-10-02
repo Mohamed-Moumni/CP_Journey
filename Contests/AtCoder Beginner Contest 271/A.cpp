@@ -39,23 +39,43 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-
-ll powe(ll a, ll b)
+char f(int n)
 {
-    int res;
-    if (b == 0)
-        return (1);
-    if (b == 1)
-        return (a);
-    res = power(a,b/2);
-    if (b%2 == 0)
-        return (res * res);
-    return (res *res * a);
+    if (n>= 0 && n <= 9)
+        return ('0' + n);
+    else if (n == 10)
+        return ('A');
+    else if (n == 11)
+        return ('B');
+    else if (n == 12)
+        return ('C');
+    else if (n == 13)
+        return ('D');
+    else if (n == 14)
+        return ('E');
+    else if (n == 15)
+        return ('F');
+    return (-1);
 }
 void solve(void)
 {
-    ll n,m;cin>>n>>m;
-    cout << powe(10,10e9) << ln;
+    int n;cin>>n;
+    string s = "";
+
+    while (n > 0)
+    {
+        s = string (1,f(n%16)) + s;
+        n = n / 16;
+    }
+    if (s.size() == 1)
+    {
+        s = "0" + s;
+    }
+    else if (s.size() == 0)
+    {
+        s += "00";
+    }
+    cout << s << ln;
 }
 
 signed main(void)

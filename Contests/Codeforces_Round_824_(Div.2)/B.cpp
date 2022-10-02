@@ -39,29 +39,34 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-
-ll powe(ll a, ll b)
-{
-    int res;
-    if (b == 0)
-        return (1);
-    if (b == 1)
-        return (a);
-    res = power(a,b/2);
-    if (b%2 == 0)
-        return (res * res);
-    return (res *res * a);
-}
 void solve(void)
 {
-    ll n,m;cin>>n>>m;
-    cout << powe(10,10e9) << ln;
+    int n;cin>>n;
+    vi a(n);
+    int max = 0;
+    for (int i=0;i<n;i++)
+    {
+        cin >> a[i];
+    }
+    sort(a.B,a.E);
+    int k = 0;
+    int d;
+    for (int i=1;i<n;i++)
+    {
+        d = a[i] / ((a[0] * 2) - 1);
+        if (a[i] % ((a[0]*2) - 1) == 0)
+        {
+            d--;
+        }
+        k += d;
+    }
+    cout << k << ln;
 }
 
 signed main(void)
 {
-    ll t = 1;
-    // cin >> t;
+    ll t;
+    cin >> t;
     while (t--)
     {
         solve();
