@@ -41,39 +41,13 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int n;cin>>n;
-    vi a(n);
-    for (int i=0;i<n;i++)
-    {
-        cin >> a[i];
-    }
-    int min = 500;
-    int max_index, min_index;
-    int max = 0;
-    for (int i=0;i<n;i++)
-    {
-        if (a[i] > max)
-        {
-            max = a[i];
-            max_index = i;
-        }
-        if (a[i] <= min)
-        {
-            min = a[i];
-            min_index = i;
-        }
-    }
-    int ans = max_index + (n - 1 - min_index);
-    if (max_index > min_index)
-        cout << ans - 1 << ln;
-    else
-        cout << ans << ln;
+    
 }
 
 signed main(void)
 {
-    ll t = 1;
-    // cin >> t;
+    ll t;
+    cin >> t;
     while (t--)
     {
         solve();

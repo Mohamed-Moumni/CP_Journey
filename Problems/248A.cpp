@@ -42,32 +42,22 @@ const int mod = (int)1e9 + 7;
 void solve(void)
 {
     int n;cin>>n;
-    vi a(n);
+    vector<pair<int, int> > a;
+    int c = 0,d = 0,e = 0,f = 0;
+    int k,j;
     for (int i=0;i<n;i++)
     {
-        cin >> a[i];
+        cin >> k >> j;
+        if (k == 0)
+            c++;
+        else
+            d++;
+        if (j == 0)
+            e++;
+        else
+            f++;
     }
-    int min = 500;
-    int max_index, min_index;
-    int max = 0;
-    for (int i=0;i<n;i++)
-    {
-        if (a[i] > max)
-        {
-            max = a[i];
-            max_index = i;
-        }
-        if (a[i] <= min)
-        {
-            min = a[i];
-            min_index = i;
-        }
-    }
-    int ans = max_index + (n - 1 - min_index);
-    if (max_index > min_index)
-        cout << ans - 1 << ln;
-    else
-        cout << ans << ln;
+    cout << min(c,d) + min(e,f) << ln;
 }
 
 signed main(void)
