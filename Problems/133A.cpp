@@ -41,13 +41,22 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    string s;cin>>s;
+    for (int i=0;i<s.Z;i++)
+    {
+        if (s[i] == 'H' || s[i] == 'Q' || s[i] == '9')
+        {
+            cout << "YES\n";
+            return ;
+        }
+    }
+    cout << "NO\n";
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

@@ -41,13 +41,25 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int n,a,b;
+    cin>>n;
+    int max = 0;
+    int sum = 0;
+    for (int i=0;i<n;i++)
+    {
+        cin >> a >> b;
+        sum = sum - a;
+        sum = sum + b;
+        if (sum > max)
+            max = sum;
+    }
+    cout << max << ln;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

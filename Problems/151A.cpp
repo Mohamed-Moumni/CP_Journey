@@ -41,13 +41,16 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int n,k,l,c,d,p,nl,np;
+    cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+
+    cout << min(min((k*l)/nl, c*d), p/np) / n << ln;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

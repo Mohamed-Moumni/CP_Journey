@@ -9,4 +9,9 @@
 * [200B](https://codeforces.com/problemset/problem/200/B)
 * [248A](https://codeforces.com/problemset/problem/248/A)
 * [155A](https://codeforces.com/problemset/problem/155/A)
+* [116A](https://codeforces.com/problemset/problem/116/A)
+* [151A](https://codeforces.com/problemset/problem/151/A)
+* [133A](https://codeforces.com/problemset/problem/133/A)
+* [282A](https://codeforces.com/problemset/problem/282/A)
+* [227B](https://codeforces.com/problemset/problem/227/B)
 

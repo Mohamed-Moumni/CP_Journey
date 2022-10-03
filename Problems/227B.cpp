@@ -38,16 +38,32 @@ typedef pair<ll,ll> pll;
 int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
-
 void solve(void)
 {
-    
+    int n;cin>>n;
+    map<int, int > mp;
+    int k;
+    for (int i=0;i<n;i++)
+    {
+        cin >> k;
+        mp[k] = i;
+    }
+    int m;cin>>m;
+    int d;
+    int a=0,b=0;
+    for (int i=0;i<m;i++)
+    {
+        cin >> d;
+        a += mp[d] + 1;
+        b += n - mp[d];
+    }
+    cout << a << " " << b << ln;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();
