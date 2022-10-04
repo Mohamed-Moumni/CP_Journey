@@ -41,13 +41,30 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int k,n;cin>>n>>k;
+    int mid;
+
+    if (n % 2 == 0)
+        mid = n/2;
+    else
+        mid = n/2 + 1;
+    int ans;
+    if (k <= mid)
+    {
+        k--;
+        ans = 1 + 2*k;
+    }
+    else
+    {
+        ans = 2 * ((n / 2) - (n - k));
+    }
+    cout << ans << ln;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

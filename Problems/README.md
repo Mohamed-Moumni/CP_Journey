@@ -14,4 +14,9 @@
 * [133A](https://codeforces.com/problemset/problem/133/A)
 * [282A](https://codeforces.com/problemset/problem/282/A)
 * [227B](https://codeforces.com/problemset/problem/227/B)
+* [272A](https://codeforces.com/problemset/problem/272/A)
+* [165A](https://codeforces.com/problemset/problem/165/A)
+* [139A](https://codeforces.com/problemset/problem/139/A)
+* [34A](https://codeforces.com/problemset/problem/34/A)
+* [318A](https://codeforces.com/problemset/problem/318/A)
 

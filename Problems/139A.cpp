@@ -41,13 +41,36 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int n;cin>>n;
+    vi a(7);
+    int sum = n;
+    for (int i=0;i<7;i++)
+    {
+        cin >> a[i];
+    }
+    int ans = 0;
+    while (sum > 0)
+    {
+        for (int i =0;i<7;i++)
+        {
+            if (sum > 0)
+            {
+                sum -= a[i];
+            }
+            if (sum <= 0)
+            {
+                ans = i;
+                break ;
+            }
+        }
+    }
+    cout << ans + 1<< ln;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

@@ -41,13 +41,13 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int 
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

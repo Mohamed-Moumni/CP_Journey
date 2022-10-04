@@ -41,13 +41,29 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int n,m;cin>>n>>m;
+    vi a(n);
+    int max = -1;
+    int id = 0;
+    for (int i=0;i<n;i++)
+    {
+        cin >> a[i];
+        if (a[i] - m > max)
+        {
+            max = a[i] - m;
+            id = i;
+        }
+    }
+    if (id == 0)
+        cout << n << ln;
+    else
+        cout << id + 1 << ln;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

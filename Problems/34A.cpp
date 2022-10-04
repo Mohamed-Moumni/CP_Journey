@@ -41,13 +41,36 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int n;cin>>n;
+    vi a(n);
+    for (int i=0;i<n;i++)
+    {
+        cin >> a[i];
+    }
+    int min = 80000;
+    int j,k;
+    for (int i=0;i<n;i++)
+    {
+        if (i < n - 1 && (abs(a[i] - a[i+1])) < min)
+        {
+            min = abs(a[i] - a[i + 1]);
+            j = i;
+            k = i+1;
+        }
+    }
+    if (abs(a[n-1] - a[0]) < min)
+    {
+        min = abs(a[n-1] - a[0]);
+        j = n-1;
+        k = 0;
+    }
+    cout << j + 1 << " " << k + 1 ;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();
