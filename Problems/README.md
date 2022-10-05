@@ -19,4 +19,9 @@
 * [139A](https://codeforces.com/problemset/problem/139/A)
 * [34A](https://codeforces.com/problemset/problem/34/A)
 * [318A](https://codeforces.com/problemset/problem/318/A)
+* [205A](https://codeforces.com/problemset/problem/205/A)
+* [352A](https://codeforces.com/problemset/problem/352/A)
+* [34B](https://codeforces.com/contest/34/problem/B)
+* [214A](https://codeforces.com/problemset/problem/214/A)
+
 
