@@ -23,5 +23,5 @@
 * [352A](https://codeforces.com/problemset/problem/352/A)
 * [34B](https://codeforces.com/contest/34/problem/B)
 * [214A](https://codeforces.com/problemset/problem/214/A)
-
-
+* [208A](https://codeforces.com/problemset/problem/208/A)
+* [221A](https://codeforces.com/problemset/problem/221/A)
