@@ -25,3 +25,7 @@
 * [214A](https://codeforces.com/problemset/problem/214/A)
 * [208A](https://codeforces.com/problemset/problem/208/A)
 * [221A](https://codeforces.com/problemset/problem/221/A)
+* [219A](https://codeforces.com/problemset/problem/219/A)
+* [96A](https://codeforces.com/problemset/problem/96/A)
+* [118B](https://codeforces.com/problemset/problem/118/B)
+* [58A](https://codeforces.com/problemset/problem/58/A)
