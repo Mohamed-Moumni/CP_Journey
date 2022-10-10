@@ -41,13 +41,50 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    
+    int n;cin>>n;
+    vi zeros;
+    vi fives;
+    int a;
+    int sum = 0;
+    REP(i, 0, n)
+    {
+        cin >> a;
+        if (a == 0)
+            zeros.push_back(a);
+        else
+        {
+            fives.push_back(a);
+            sum += a;
+        }
+    }
+    REP(i, 0, n)
+    {
+        if (sum % 9 == 0)
+            break ;
+        else
+            sum = sum - 5;
+    }
+    if ((sum == 0 && zeros.size() == 0) || (sum && zeros.size() == 0))
+        cout << "-1" << ln;
+    else if (sum == 0 && zeros.size())
+        cout << "0" << ln;
+    else
+    {
+        while (sum > 0)
+        {
+            cout << "5";
+            sum -= 5;
+        }
+        REP(i,0,zeros.size())
+            cout << "0";
+        cout << ln;
+    }
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();
