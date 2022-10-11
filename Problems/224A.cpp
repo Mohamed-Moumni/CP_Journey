@@ -41,7 +41,12 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int 
+    int a,b,c;cin>>a>>b>>c;
+    int sum = 0;
+    sum += 4 * sqrt((a*c)/b);
+    sum += 4 * sqrt((a*b)/c);
+    sum += 4 * sqrt((b*c)/a);
+    cout << sum << ln;
 }
 
 signed main(void)

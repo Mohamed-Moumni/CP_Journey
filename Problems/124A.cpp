@@ -42,15 +42,13 @@ const int mod = (int)1e9 + 7;
 void solve(void)
 {
     int n,a,b;cin>>n>>a>>b;
-    if (n - a > b && b != 0)
-        cout << n - 1 << ln;
-    else
+    int ans = 0;
+    for (int i = 1;i<=n;i++)
     {
-        if (b == 0)
-            cout << 1<<ln;
-        else
-            cout << b << ln;   
+        if (a <= i - 1 && n - i <= b)
+            ans++;
     }
+    cout << ans << ln;
 }
 
 signed main(void)

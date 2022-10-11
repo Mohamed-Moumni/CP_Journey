@@ -29,3 +29,10 @@
 * [96A](https://codeforces.com/problemset/problem/96/A)
 * [118B](https://codeforces.com/problemset/problem/118/B)
 * [58A](https://codeforces.com/problemset/problem/58/A)
+* [450A](https://codeforces.com/contest/450/standings)
+* [224A](https://codeforces.com/problemset/problem/224/A)
+* [124A](https://codeforces.com/problemset/problem/124/A)
+* [149A](https://codeforces.com/contest/149/problem/A)
+
+
+

@@ -39,39 +39,52 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-void    print_mid(int n)
-{
-    int i = 0;
-    int sp,c,z;
-
-    while (i < n)
-    {
-        sp = n - (i + 1);
-        z = i + 1;
-        c = n - sp - 2;
-        if (c < 0)
-            c = 0;
-        REP(j,0,sp/2)
-            cout << " ";
-        REP(j,0,z/2)
-            cout << "0 ";
-        REP(j,1,n/2)
-            cout << j << " ";
-        cout << n/2 << " ";
-        for (int j=n/2 -1;j>=1;j--)
-            cout << j << " ";
-        for(int j=z/2 - 1;j>=0;j--)
-            cout << "0 ";
-        for (int j=sp/2 - 1; j>= 0;j--)
-            cout << " ";
-        cout << ln;
-        i++;
-    }
-}
-void solve(void)
+void    solve(void)
 {
     int n;cin>>n;
-    print_mid(2*n + 1);
+    vector<vector<int> > a(n + 1);
+    for (int i=0;i<n+1;i++)
+    {
+        for(int j=0;j<=i;j++)
+        {
+            a[i].push_back(j);
+        }
+        int k;
+        k = i - 1;
+        while (k>=0)
+        {
+            a[i].push_back(k);
+            k--;
+        }
+    }
+    int d = n;
+    for (int i=0;i<n+1;i++)
+    {
+        for (int k=0;k<d*2;k++)
+            cout << " ";
+        for (int j=0;j<a[i].Z;j++)
+        {
+            cout << a[i][j];
+            if (j < a[i].Z - 1)
+                cout << " ";
+        }
+        d--;
+        cout << ln;
+    }
+    d = 1;
+    for (int i=n - 1;i>=0;i--)
+    {
+        for (int k=0;k<d*2;k++)
+            cout << " ";
+        for (int j=a[i].Z - 1;j >= 0;j--)
+        {
+            cout << a[i][j];
+            if (j > 0)
+                cout << " ";
+        }
+        d++;
+        cout << ln;
+    }
 }
 
 signed main(void)

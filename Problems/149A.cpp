@@ -41,24 +41,33 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int n,m;cin>>n>>m;
-    int ans = 0;
-    int max = -1;
-    int a,k;
-    for (int i=0;i<n;i++)
+    int k;cin>>k;
+    vi a(12);
+    for (int i=0; i < 12;i++)
     {
-        cin >> a;
-        if (a % m == 0)
-            k = a / m;
-        else
-            k = a/m + 1;
-        if (k >= max)
-        {
-            max = k;
-            ans = i+1;
-        }
+        cin >> a[i];
     }
-    cout << ans << ln;
+    sort(a.B, a.E);
+    int i = a.Z - 1;
+    int sum = 0;
+    int ans = 0;
+    while (i >= 0)
+    {
+        if (sum >= k)
+        {
+            break ;
+        }
+        else
+        {
+            sum += a[i];
+            ans++;
+        }
+        i--;
+    }
+    if (sum >= k)
+        cout << ans << ln;
+    else
+        cout << "-1" << ln;
 }
 
 signed main(void)
