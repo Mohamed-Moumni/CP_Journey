@@ -39,51 +39,28 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-int check_word(string &s, int i)
-{
-    while (s[i] && s[i] != 'h')
-        i++;
-    if (s[i] !='h')
-        return (i);
-    while (s[i] && s[i] != 'e')
-        i++;
-    if (s[i] != 'e')
-        return (i);
-    while (s[i] && s[i] != 'l')
-        i++;
-    if (s[i] != 'l')
-        return (i);
-    i++;
-    while (s[i] && s[i] != 'l')
-        i++;
-    if (s[i] != 'l')
-        return (i);
-    while (s[i] && s[i] != 'o')
-        i++;
-    if (s[i] != 'o')
-        return (i);
-    return (0);
-}
-
 void solve(void)
 {
-    string s;cin>>s;
-    int i=0;
-    int ret;
-    while (i < s.Z)
+    int n,m;cin>>n>>m;
+    string s;
+    for (int i=0;i<n;i++)
     {
-        ret = check_word(s, i);
-        if (ret == 0)
+        cin >> s;
+        for (int j=0;j<m;j++)
         {
-            cout << "YES" << ln;
-            return ;
+            if (s[j] == '.')
+            {
+                if ((i+j) & 1)
+                {
+                    s[j] = 'W';
+                }
+                else
+                    s[j] = 'B';
+            }
         }
-        else
-        {
-            i = ret;
-        }
+        cout << s;
+            cout << ln;
     }
-    cout << "NO" << ln;
 }
 
 signed main(void)

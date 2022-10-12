@@ -33,6 +33,7 @@
 * [224A](https://codeforces.com/problemset/problem/224/A)
 * [124A](https://codeforces.com/problemset/problem/124/A)
 * [149A](https://codeforces.com/contest/149/problem/A)
-
+* [118B](https://codeforces.com/problemset/problem/118/B)
+* [230A](https://codeforces.com/contest/230/problem/A)
 
 

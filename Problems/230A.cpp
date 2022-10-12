@@ -39,51 +39,34 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-int check_word(string &s, int i)
-{
-    while (s[i] && s[i] != 'h')
-        i++;
-    if (s[i] !='h')
-        return (i);
-    while (s[i] && s[i] != 'e')
-        i++;
-    if (s[i] != 'e')
-        return (i);
-    while (s[i] && s[i] != 'l')
-        i++;
-    if (s[i] != 'l')
-        return (i);
-    i++;
-    while (s[i] && s[i] != 'l')
-        i++;
-    if (s[i] != 'l')
-        return (i);
-    while (s[i] && s[i] != 'o')
-        i++;
-    if (s[i] != 'o')
-        return (i);
-    return (0);
-}
-
 void solve(void)
 {
-    string s;cin>>s;
-    int i=0;
-    int ret;
-    while (i < s.Z)
+    int s,n;cin>>s>>n;
+    vector<pair<int, int> > a;
+    int x,y;
+    for (int i=0;i<n;i++)
     {
-        ret = check_word(s, i);
-        if (ret == 0)
+        cin >> x >> y;
+        a.push_back(make_pair(x,y));
+    }
+    sort(a.B, a.E);
+    int start = s;
+    int i =0;
+    for (;i<n;i++)
+    {
+        if (start <= a[i].first)
         {
-            cout << "YES" << ln;
-            return ;
+            break ;
         }
         else
         {
-            i = ret;
+            start += a[i].second; 
         }
     }
-    cout << "NO" << ln;
+    if (i == a.size())
+        cout << "YES" << ln;
+    else
+        cout << "NO" << ln;
 }
 
 signed main(void)
