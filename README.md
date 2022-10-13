@@ -22,3 +22,19 @@ it's contains my solutions for problems in many platform :
 * [USACO](https://usaco.guide/dashboard/)
 * [Codeforces](https://codeforces.com/blog/entry23054)
 * [Cp Algorithm](https://cp-algorithms.com/)
+
+> Useful Youtube Channels for Competitive programming
+
+* [WilliamFiset](https://www.youtube.com/c/WilliamFiset-videos/)
+* [colinGalen](https://www.youtube.com/c/ColinGalen/)
+* [Utkarsh Gupat](https://www.youtube.com/channel/UCGS5ZzcSAymQbWZvNoKOFhQ)
+* [petrmitrichev](https://www.youtube.com/user/petrmitrichev)
+* [afternoonish](https://www.youtube.com/user/afternoonish)
+* [ecnerwala](https://www.youtube.com/channel/UCn9ng6ZUnh5weU1BsIQoZ5w)
+* [Jay Leeds](https://www.youtube.com/channel/UCpUTNKWxw9p4nOvekiIRWow)
+* [William Lin](https://www.youtube.com/channel/UCKuDLsO0Wwef53qdHPjbU2Q)
+* [SecondThread](https://www.youtube.com/channel/UCXbCohpE9IoVQUD2Ifg1d1g)
+* [Errichto](https://www.youtube.com/c/Errichto)
+* [Reducible](https://www.youtube.com/c/Reducible)
+* [3blue1brown](https://www.youtube.com/c/3blue1brown)
+
