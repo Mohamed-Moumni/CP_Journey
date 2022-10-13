@@ -23,5 +23,6 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "complex": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
