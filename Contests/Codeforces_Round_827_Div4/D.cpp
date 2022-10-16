@@ -53,25 +53,34 @@ void solve(void)
     for (int i=0;i<n;i++)
     {
         cin >> b;
-        a.push_back(b, i+1);
+        a.push_back(make_pair(b, i+1));
     }
     sort(a.B,a.E);
-    // vi a(n);
-    // REP(i,0,n)
-    //     cin>>a[i];
-    // int max = -1;
-    // for (int i =0;i<n;i++)
-    // {
-    //     for (int j=0;j<n;j++)
-    //     {
-    //         if (gcd(a[i],a[j]) == 1)
-    //         {
-    //             if ((i + j + 2) > max)
-    //                 max = (i + j + 2);
-    //         }    
-    //     }
-    // }
-    // cout << max << ln;
+    vector<pair<int, int> > c;
+    int comp;
+    comp = a[0].first;
+    int i= 0;
+    while (i < n)
+    {
+        while (i< n && a[i].first == comp)
+            i++;
+        c.push_back(make_pair(a[i-1].first,a[i-1].second));
+        if (i < n)
+            comp = a[i].first;
+    }
+    int max = -1;
+    for (int i=0;i<c.Z;i++)
+    {
+        for (int j=0;j<c.Z;j++)
+        {
+            if (gcd(c[i].first, c[j].first) == 1)
+            {
+                if (c[i].second + c[j].second > max)
+                    max = c[i].second + c[j].second;
+            }
+        }
+    }
+    cout << max << ln;
 }
 
 signed main(void)

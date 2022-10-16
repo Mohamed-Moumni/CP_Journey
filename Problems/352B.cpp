@@ -42,12 +42,55 @@ const int mod = (int)1e9 + 7;
 void solve(void)
 {
     int n;cin>>n;
-    map <int, int> mp;
-    int a;
+    vector<pair<int , int> > a;
+    int b;
     for (int i=0;i<n;i++)
     {
-        cin >> a;
-        mp[a]++;
+        cin >> b;
+        a.push_back(make_pair(b, i));
+    }
+    sort (a.B, a.E);
+    int com = a[0].first;
+    int i=0;
+    int k = 0;
+    int count = 0;
+    int check = 0;
+    vector<pair<int, int> > c;
+    while (i < n)
+    {
+        i = i + 1;
+        k = 0;
+        count++;
+        check = 0;
+        while (i < n && a[i].first == com)
+        {
+            if (check == 0)
+            {
+                if (k == 0)
+                    k = a[i].second - a[i-1].second;
+                else
+                {
+                    if (a[i].second - a[i - 1].second != k)
+                    {
+                        k = 0;
+                        count--;
+                        check = 1;
+                        break;
+                    }
+                }
+            }
+            i++;
+        }
+        if (!check)
+            c.push_back(make_pair(a[i-1].first, k));
+        // cout << a[i-1].first << " " << k << ln;
+        if (i < n)
+            com = a[i].first;
+    }
+    cout << count << ln;
+    for (auto u:c)
+    {
+        cout << u.first << " " << u.second <<ln;
     }
 }
 
