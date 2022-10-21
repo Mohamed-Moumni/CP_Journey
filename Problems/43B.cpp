@@ -1,4 +1,4 @@
-#include "/Users/mmoumni/Desktop/bits-std-header/stdc++.h"
+#include<bits/stdc++.h>
 using namespace std;
 
 #define int long long
@@ -27,27 +27,41 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int n,a,b;
-    cin>>n;
-    int max = 0;
-    int sum = 0;
-    for (int i=0;i<n;i++)
+    string s1,s2;
+    getline(cin, s1);
+    getline(cin, s2);
+    map<char, int> mp1;
+    REP(i, 0, s1.Z)
     {
-        cin >> a >> b;
-        sum = sum - a;
-        sum = sum + b;
-        if (sum > max)
-            max = sum;
+        if (s1[i] != ' ')
+            mp1[s1[i]]++;
     }
-    cout << max << ln;
+    bool ok = false;
+    REP(i, 0, s2.Z)
+    {
+        if (mp1[s2[i]])
+        {
+            mp1[s2[i]] = mp1[s2[i]] - 1;
+        }
+        else if (s2[i] != ' ')
+        {
+            ok = true;
+            break ;
+        }
+    }
+    if (ok)
+        cout << "NO" << ln;
+    else
+        cout << "YES" << ln;
 }
 
 signed main(void)
 {
     ll t = 1;
-    // cin >> t;
+    //cin >> t;
     while (t--)
     {
         solve();
     }
 }
+

@@ -1,4 +1,5 @@
 #include "/Users/mmoumni/Desktop/bits-std-header/stdc++.h"
+
 using namespace std;
 
 #define int long long
@@ -27,27 +28,19 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int n,a,b;
-    cin>>n;
-    int max = 0;
-    int sum = 0;
-    for (int i=0;i<n;i++)
-    {
-        cin >> a >> b;
-        sum = sum - a;
-        sum = sum + b;
-        if (sum > max)
-            max = sum;
-    }
-    cout << max << ln;
+    int n,k;cin >> n >> k;
+    vi a(n);
+    for (i, 0 , n)
+        cin >> a[i];
 }
 
 signed main(void)
 {
     ll t = 1;
-    // cin >> t;
+    //cin >> t;
     while (t--)
     {
         solve();
     }
 }
+
