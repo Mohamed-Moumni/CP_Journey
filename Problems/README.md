@@ -39,3 +39,5 @@
 * [342A](https://codeforces.com/problemset/problem/342/A)
 * [43B](https://codeforces.com/problemset/problem/43/B)
 * [276B](https://codeforces.com/problemset/problem/276/B)
+* [186A](https://codeforces.com/contest/186/problem/A)
+
