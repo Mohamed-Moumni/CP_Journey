@@ -28,32 +28,15 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int t,sx,sy,ex,ey;cin>>t>>sx>>sy>>ex>>ey;
-    string s;cin>>s;
-    if (sx == 0 || sy == 0 || ex == 0 || ey == 0)
-    {
-        if (sx == 0 || ex == 0)
-        {
-
-        }
-        else
-        {
-            
-        }
-    }
-    else
-    {
-
-    }
+    
 }
 
 signed main(void)
 {
-    ll t = 1;
-//    cin >> t;
+    ll t;
+    cin >> t;
     while (t--)
     {
         solve();
     }
 }
-

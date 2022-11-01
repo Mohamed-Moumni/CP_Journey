@@ -1,5 +1,17 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <complex>
+#include <iomanip>
+#include <algorithm>
+#include <queue>
+#include <stack>
+#include <string>
+#include <vector>
+#include <cmath>
+#include <map>
+#include <set>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
 using namespace std;
 
 #define int long long
@@ -25,16 +37,29 @@ typedef pair<ll,ll> pll;
 int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
+const int x = 998244353;
 
 void solve(void)
 {
-    
+    int a,b,c,d,e,f;
+
+    cin >> a >> b >> c >> d >> e >> f;
+    int aa;
+    aa = ((a % x) * (b % x) % x);
+    aa *= (c % x);
+    aa %= x;
+    int bb;
+    bb = ((d%x) * (e%x) % x);
+    bb *= (f%x);
+    bb %= x;
+    int res = abs(aa - bb)%x;
+    cout << res << endl;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();

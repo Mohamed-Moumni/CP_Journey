@@ -1,5 +1,17 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <complex>
+#include <iomanip>
+#include <algorithm>
+#include <queue>
+#include <stack>
+#include <string>
+#include <vector>
+#include <cmath>
+#include <map>
+#include <set>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
 using namespace std;
 
 #define int long long
@@ -26,34 +38,43 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
-void solve(void)
-{
-    int t,sx,sy,ex,ey;cin>>t>>sx>>sy>>ex>>ey;
-    string s;cin>>s;
-    if (sx == 0 || sy == 0 || ex == 0 || ey == 0)
-    {
-        if (sx == 0 || ex == 0)
-        {
+map<int ,int >mp;
 
-        }
-        else
-        {
-            
-        }
+int func(int n)
+{
+    int res = 0;
+    if (n == 0)
+        return 1;
+    if (mp[n/2])
+    {   
+        res += mp[n/2];
     }
     else
     {
-
+        mp[n/2] = func(n/2);
+        res += mp[n/2];
     }
+    if (mp[n/3])
+        res += mp[n/3];
+    else
+    {
+        mp[n/3] = func(n/3);
+        res += mp[n/3];
+    }
+    return res;
+}
+
+void solve(void)
+{
+    int n;cin>>n;
+    cout << func(n) << endl;
 }
 
 signed main(void)
 {
     ll t = 1;
-//    cin >> t;
     while (t--)
     {
         solve();
     }
 }
-

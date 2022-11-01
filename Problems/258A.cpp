@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 #define int long long
@@ -28,32 +27,26 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int t,sx,sy,ex,ey;cin>>t>>sx>>sy>>ex>>ey;
     string s;cin>>s;
-    if (sx == 0 || sy == 0 || ex == 0 || ey == 0)
+    int index = -1;
+    for (int i = s.Z; i >= 0 ;i--)
     {
-        if (sx == 0 || ex == 0)
-        {
-
-        }
-        else
-        {
-            
-        }
+        if (s[i] == '0')
+            index = i;
     }
+    if (index != -1)
+        s.erase(index, 1);
     else
-    {
-
-    }
+        s.erase(0, 1);
+    cout << s << endl;
 }
 
 signed main(void)
 {
     ll t = 1;
-//    cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();
     }
 }
-
