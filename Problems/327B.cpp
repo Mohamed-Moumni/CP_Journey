@@ -25,10 +25,41 @@ int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
 const int mod = (int)1e9 + 7;
 
+    int is_prime[10000003];
+
 void solve(void)
 {
-    int n;cin>>n;
-    
+    int a = 2;
+    for (int i=2;i<10000003;i++)
+    {
+        is_prime[i] = a;
+        a++;
+    }
+    vector<int> primes;
+    int n;
+    cin>>n;
+    int d;
+    for (int i = 2; i <= sqrt(10000000); i++)
+    {
+        d = 2;
+        if (is_prime[i] != -1)
+        {
+            while (d * i < 10000003)
+            {
+                is_prime[d * i] = -1;
+                d++;
+            }
+        }
+    }
+    for (int i=2; i < 10000003 ; i++)
+    {
+        if (is_prime[i] != -1)
+            primes.push_back(is_prime[i]);
+    }
+    for (int i=0;i<n;i++)
+    {
+        cout << primes[i] << " ";
+    }
 }
 
 signed main(void)

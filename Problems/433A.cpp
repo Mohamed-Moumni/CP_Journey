@@ -28,43 +28,30 @@ const int mod = (int)1e9 + 7;
 void solve(void)
 {
     int n;cin>>n;
-    map<int ,int > mp;
-    int a;
-    REP(i, 0, n)
+    vi a(n);
+    int sum = 0;
+    for (int i=0;i<n;i++)
     {
-        cin >> a;
-        if (a == 100)
-            mp[100]++;
-        else
-            mp[200]++;
+        cin >> a[i];
+        sum += a[i];
     }
-    bool ok = true;
-    if (mp[100] == 0)
+    if (sum % 2)
     {
-        if (mp[200] != 0 && mp[200] %2)
-            ok = false;
-        else
+        cout << "NO\n";
+        return; 
+    }
+    int sum1 = sum / 2;
+    for (int i = n - 1; i >= 0 ; i--)
+    {
+        if (sum1 - a[i] >= 0)
         {
-            cout << "YES" << ln;
-            return ;
+            sum1 -= a[i];
         }
     }
+    if (sum1 == 0)
+        cout << "YES" << endl;
     else
-    {
-        if (mp[100] != 0 && mp[100]%2)
-            ok = false;
-        else
-        {
-            cout << "YES" << ln;
-            return ;
-        }
-    }
-    if (!ok)
-    {
-        cout << "NO" << ln;
-        return ;
-    }
-    int res = abs(mp[100] * 2)
+        cout << "NO" << endl;
 }
 
 signed main(void)
