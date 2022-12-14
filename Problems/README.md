@@ -47,3 +47,4 @@
 * [515C](https://codeforces.com/contest/515/problem/C)
 * [433B](https://codeforces.com/contest/433/problem/B)
 * [688B](https://codeforces.com/contest/688/problem/B)
+* [363B] (https://codeforces.com/contest/363/problem/B)
