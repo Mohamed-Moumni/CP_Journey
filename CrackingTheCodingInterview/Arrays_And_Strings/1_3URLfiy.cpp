@@ -24,7 +24,7 @@ using namespace std;
 //     }
 // }
 
-// Adjusted Solution after viewing other solution
+// Adjusted Solution after viewing other solutions
 
 // void    solution(string &input, int n)
 // {
