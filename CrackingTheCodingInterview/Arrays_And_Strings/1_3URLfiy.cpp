@@ -1,4 +1,3 @@
-// remove comment to test the solution
 #include<iostream>
 
 using namespace std;
