@@ -1,18 +1,4 @@
-#include <iostream>
-#include <complex>
-#include <iomanip>
-#include <algorithm>
-#include <queue>
-#include <stack>
-#include <string>
-#include <vector>
-#include <cmath>
-#include <map>
-#include <set>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 #define int long long
@@ -41,25 +27,32 @@ const int mod = (int)1e9 + 7;
 
 void solve(void)
 {
-    int n;
+    ll n, a;
 
-    cin >> n;
-    vector<pair<int, int> > v(n);
-    int d;
-    for (int i = 0; i < n; i++)
+    cin >> n >> a;
+    a--;
+    vi vect(n);
+    for(int i = 0; i < n; i++)
     {
-        cin >> d;
-        v[i].first = d;
-        v[i].second = i + 1; 
+        cin >> vect[i]; 
     }
-    sort(v.begin(), v.end());
-    cout << v[n - 1].second << "\n";
+    int k = 0;
+    int ans = 0;
+    while (1)
+    {
+        if (a - k < 0 || a + k >= vect.size())
+            break ;
+        if (vect[a-k] || vect[a+k])
+            ans++;
+        k++;
+    }
+    cout << ans << endl;
 }
 
 signed main(void)
 {
-    ll t;
-    cin >> t;
+    ll t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();
