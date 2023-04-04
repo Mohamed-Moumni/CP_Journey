@@ -12,41 +12,26 @@ int main(void)
     freopen("diamond.in", "r", stdin);
 
     cin >> n >> k;
-    long long b;
-    vector<pair<long long, long> > nums;
-    set<pair<long long, long long> > s;
-    for (int i = 0; i < n;i++)
+    vector<int> vect(n);
+    for (int i = 0; i < n; i++)
     {
-        cin >> b;
-        s.insert(make_pair(b, 0));
+        cin >> vect[i];
     }
-    set<pair<long long, long long> >::iterator it;
-    it = s.begin();
-    for (; it != s.end(); it++)
+    sort(vect.begin(), vect.end());
+    int sol = 0;
+    for (int i = 0; i < n; i++)
     {
-        nums.push_back(*it);
-    }
-    long long count = 0;
-    for (int i = 0; i < nums.size(); i++)
-    {
-        for (int j = i + 1; j < nums.size(); j++)
+        int count = 0;
+        for (int j = 0; j < n; j++)
         {
-            if (abs(nums[i].first - nums[j].first) == k)
+            for (int k = i; k <= j; k++)
             {
-                if (nums[i].second == 0)
-                {
-                    nums[i].second = 1;
-                    count++;
-                }
-                if (nums[j].second == 0)
-                {
-                    nums[j].second = 1;
-                    count++;
-                }
+                if (vect[i] - )
             }
         }
+        sol = max(sol, count); 
     }
     freopen("diamond.out", "w", stdout);
-    cout << count << endl;
+    cout << sol << endl;
     return (0);
 }
