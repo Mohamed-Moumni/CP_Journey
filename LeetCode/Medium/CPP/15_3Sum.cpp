@@ -12,26 +12,32 @@ public:
         sort(nums.begin(), nums.end());
         for (int i = 0; i < size; i++)
         {
-            if (i > 0 && nums[i] == nums[i-1])
+            if (i && nums[i] == nums[i-1])
                 continue ;
             int a,b;
+            int target = 0 - nums[i];
+            int prev = -1000002;
             a = i + 1;
             b = size - 1;
             while (a < b)
             {
-                if (nums[i] + nums[a] + nums[b] == 0)
-                {  
-                    if (b < size - 1 && nums[a] == nums[a - 1] && nums[b] == nums[b + 1])
-                    ;
-                    else
-                        result.push_back({nums[i],nums[a],nums[b]});
+                int sum = nums[a] + nums[b];
+                if (sum < target)
+                    a++;
+                else if (sum > target)
+                    b--;
+                else if (prev != nums[a])
+                {
+                    result.push_back({nums[a], nums[b], nums[i]});
+                    prev = nums[a];
                     a++;
                     b--;
                 }
-                if (nums[i] + nums[a] + nums[b] < 0)
+                else
+                {
                     a++;
-                else if (nums[i] + nums[a] + nums[b] > 0)
                     b--;
+                }
             }
         }
         return result;   
