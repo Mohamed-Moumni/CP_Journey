@@ -4,7 +4,12 @@ using namespace std;
 
 int main(void)
 {
-    unsigned long long n = 2*3 * 4 * 5 * 6 * 7 *11 * 13 * 17 * 19;
-    cout << n << endl;
+    long long i = 1;
+    for (int j = 2; i <= 20; i++)
+    {
+        if (i % j)
+            i *= j;
+    }
+    cout << i << endl;
     return (0);
 }
