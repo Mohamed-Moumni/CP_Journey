@@ -7,28 +7,26 @@ class Solution {
 public:
     int characterReplacement(string s, int k)
     {
+        vector<int> alpha(26, 0);
+
+        int i = 0, j = 0;
+        int maxcount = 0;
         int ans = 0;
-        for (int i = 0; i < s.size();i++)
+
+        while (j < s.size())
         {
-            int counter = 1; int count = k;
-            for (int j = i + 1; j < s.size(); j++)
+            alpha[s[j] - 'A']++;
+            for (int h = 0; h < 26; h++)
+                maxcount = max(maxcount, alpha[h]);
+            while (j - i + 1 - maxcount > k)
             {
-                if (s[i] == s[j])
-                    counter++;
-                else
-                {
-                    if (count)
-                    {
-                        count--;
-                        counter++;
-                    }
-                    else
-                        break ;
-                }
+                alpha[s[i] - 'A']--;
+                i++;
             }
-            ans = max(ans, counter);
+            ans = max(ans, j - i + 1);
+            j++;
         }
-        return ans;
+        return (ans);
     }
 };
 
@@ -36,6 +34,6 @@ int main(void)
 {
     Solution s;
 
-    cout << s.characterReplacement("ABAB", 2) << endl;
+    cout << s.characterReplacement("AABABBA", 1) << endl;
     return (0);
 }
