@@ -15,7 +15,7 @@ public:
         while (i < j)
         {
             sum = numbers[i] + numbers[j];
-            if ( sum == target)
+            if (sum == target)
             {
                 res.push_back(i+1);
                 res.push_back(j+1);
