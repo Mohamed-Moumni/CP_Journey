@@ -4,58 +4,31 @@
 
 using namespace std;
 
-        bool isValidSudoku(vector<vector<char> >& board) {
-            const int cnt = 9;
-            bool row[cnt][cnt] = {false};
-            bool col[cnt][cnt] = {false};
-            bool sub[cnt][cnt] = {false};
-            
-            for(int r = 0; r < cnt; ++r){
-                for(int c = 0; c < cnt; ++c){
-                    if(board[r][c] == '.')
-                        continue; // if not number pass
-                    
-                    int idx = board[r][c] - '0' - 1; //char to num idx
-                    int area = (r/3) * 3 + (c/3);
-                    
-                    //if number already exists
-                    if(row[r][idx] || col[c][idx] || sub[area][idx]){
+class Solution {
+public:
+    bool isValidSudoku(vector<vector<char>>& board) {
+        bool row[9][9] = {0};
+        bool col[9][9] = {0};
+        bool square[9][9] = {0};
+
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                if (board[i][j] != '.')
+                {
+                    int number = board[i][j] - '0' - 1;
+                    int squarePos = i / 3 * 3 + j / 3;
+                    if (row[i][number] || col[j][number] || square[squarePos][number])
                         return false;
-                    }
-                    
-                    row[r][idx] = true;
-                    col[c][idx] = true;
-                    sub[area][idx] = true;
+                    else
+                        row[i][number] = col[j][number] = square[squarePos][number] = 1;
                 }
             }
-            for (int i = 0; i < 9;i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    cout << row[i][j] << " ";
-                }
-                cout << endl;
-            }
-            cout << "--------------------------" << endl;
-            for (int i = 0; i < 9;i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    cout << col[i][j] << " ";
-                }
-                cout << endl;
-            }
-            cout << "--------------------------" << endl;
-            for (int i = 0; i < 9;i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    cout << sub[i][j] << " ";
-                }
-                cout << endl;
-            }
-            return true;
         }
+        return true;
+    }
+};
 
 int main(void)
 {
@@ -68,7 +41,10 @@ int main(void)
                                 {'.','6','.','.','.','.','2','8','.'},
                                 {'.','.','.','4','1','9','.','.','5'},
                                 {'.','.','.','.','8','.','.','7','9'} };
-
-    isValidSudoku(tab);
-return (0);
+    Solution s;
+    if (s.isValidSudoku(tab))
+        cout << "True\n";
+    else
+        cout << "False\n";
+    return (0);
 }
