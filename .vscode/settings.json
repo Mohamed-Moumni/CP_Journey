@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "set": "cpp",
         "iostream": "cpp",
         "string": "cpp",
@@ -84,7 +85,8 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "*.tcc": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
