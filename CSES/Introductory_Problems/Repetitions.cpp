@@ -7,24 +7,22 @@ int main(void)
   string s;cin>>s;
   int size = s.size();
   int ans = 0;
-  int max = 1;
+  int curr = 1;
   int i = 0;
   while(i < size - 1)
   {
     if (s[i] == s[i+1])
     {
-      max++;
+      curr++;
     }
     else
     {
-      if (ans < max)
-          ans = max;
-      max = 1;
+      ans = max(ans, curr);
+      curr = 1;
     }
     i++;
   }
-  if (ans < max)
-    ans = max;
+  ans = max(ans, curr);
   cout << ans << endl;
   return (0);
 }
