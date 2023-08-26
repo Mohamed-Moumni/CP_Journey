@@ -18,9 +18,9 @@ int main(void)
     {
       for (int i = n - 1; i > 0;i=i-2)
         cout << i << " ";
-      for (int i = n; i > 2; i=i-2)
+      for (int i = n; i >= 2; i=i-2)
         cout << i << " ";
-      cout << "2\n";
+      cout << "\n";
     }
     else
     {
