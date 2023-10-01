@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-#include<deque>
 #include<stack>
 
 using namespace std;
@@ -12,34 +11,48 @@ public:
     {
         stack<int> st;
         int size = asteroids.size();
-        vector<int> ans;
+        int stillPush;
 
-        for (int i = 0; i < size; i++)
+        st.push(asteroids[0]);
+        for (int i = 1; i < size; i++)
         {
-            if (asteroids[i] > 0)
-                st.push(asteroids[i]);
+            int value = asteroids[i];
+            if (st.empty())
+                st.push(value);
+            else if (st.top() < 0)
+                st.push(value);
+            else if (st.top() > 0 && value > 0)
+                st.push(value);
             else
             {
-                if (st.size() == 0 || st.top() < 0)
-                    st.push(asteroids[i]);
-                else if (st.top() > 0)
+                stillPush = 1;
+                while (!st.empty() > 0 && st.top() > 0)
                 {
-                    while (st.size()> 0 && st.top() > 0 && abs(st.top()) < abs(asteroids[i]))
+                    if (st.top() + value > 0)
+                    {
+                        stillPush = 0;
+                        break;
+                    }
+                    else if (st.top() + value < 0)
+                    {
                         st.pop();
-                    if (st.size() == 0)
-                        st.push(asteroids[i]);
-                    else if (st.top() < 0)
-                        st.push(asteroids[i]);
-                    else if (st.top() + asteroids[i] == 0)
+                    }
+                    else
+                    {
                         st.pop();
+                        stillPush = 0;
+                        break;
+                    }
                 }
+                if (stillPush)
+                    st.push(value);
             }
         }
-        ans = vector<int>(st.size());
-        while (st.size() > 0)
+        int stackSize = st.size();
+        vector<int> ans = vector<int>(stackSize);
+        for (int i = stackSize - 1; i >= 0; i--)
         {
-            int value = st.top();
-            ans[st.size() - 1] = value;
+            ans[i] = st.top();
             st.pop();
         }
         return ans;
@@ -49,7 +62,7 @@ public:
 int main(void)
 {
     Solution s;
-    vector<int> vect = {1, -2, -2, -2};
+    vector<int> vect = {-2, -2, 1, -2};
 
     vector<int> ans = s.asteroidCollision(vect);
     for (int i = 0; i < ans.size(); i++)
