@@ -47,7 +47,7 @@ public:
         }
         for (int i = 0; i < n * m; i++)
         {
-            if (!visited[i] && grid[i / m][i % m] == '1')
+            if (grid[i / m][i % m] == '1' && !visited[i])
             {
                 dfs(i, adj, visited);
                 islands++;
