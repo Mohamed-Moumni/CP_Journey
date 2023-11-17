@@ -17,10 +17,9 @@ struct TreeNode
 class Solution
 {
 public:
-    vector<int> tree_sequence(TreeNode *root)
+    void tree_sequence(TreeNode *root, vector<int> &sequence)
     {
         stack<TreeNode *> nodes;
-        vector<int> sequence;
 
         nodes.push(root);
         while (!nodes.empty())
@@ -39,26 +38,20 @@ public:
                     nodes.push(left);
             }
         }
-        return sequence;
     }
+
     bool leafSimilar(TreeNode *root1, TreeNode *root2)
     {
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        vector<int> seq1, seq2;
-        int size;
+        vector<int> sequence1;
+        vector<int> sequence2;
 
-        seq1 = tree_sequence(root1);
-        seq2 = tree_sequence(root2);
-        size = seq1.size();
-        if (size != seq2.size())
-            return false;
-        for (int i = 0; i < size; i++)
-            if (seq1[i] != seq2[i])
-                return false;
-        return true;
+        tree_sequence(root1, sequence1);
+        tree_sequence(root2, sequence2);
+        return sequence1 == sequence2;
     }
 };
 
@@ -77,3 +70,14 @@ int main(void)
         cout << "False" << endl;
     return (0);
 }
+
+// recursive solution
+// void tree_sequence(TreeNode *root, vector<int> &sequence)
+// {
+//     if (root == NULL)
+//         return;
+//     if (root->left == NULL && root->right == NULL)
+//         sequence.push_back(root->val);
+//     tree_sequence(root->left, sequence);
+//     tree_sequence(root->right, sequence);
+// }
