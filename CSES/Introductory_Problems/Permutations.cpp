@@ -14,22 +14,14 @@ int main(void)
       cout << "NO SOLUTION" << endl;
   else
   {
-    if (n % 2 == 0)
-    {
-      for (int i = n - 1; i > 0;i=i-2)
-        cout << i << " ";
-      for (int i = n; i >= 2; i=i-2)
-        cout << i << " ";
-      cout << "\n";
-    }
-    else
-    {
-      for (int i = n - 2; i > 0;i=i-2)
-        cout << i << " ";
-      for (int i = n - 1; i > 0; i=i-2)
-        cout << i << " ";
-      cout << n << "\n";
-    }
+    int start = n & 1 ? n - 1:n;
+    for (int i = start - 1; i > 0; i = i - 2)
+      cout << i << " ";
+    for (int i = start; i >= 2; i = i - 2)
+      cout << i << " ";
+    if (n & 1)
+      cout << n;
+    cout << "\n";
   }
   return (0);
 }
